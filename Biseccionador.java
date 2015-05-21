@@ -37,21 +37,28 @@ public class Biseccionador {
      * @param x atributo de tipo double
      * @return devuelve c de tipo double
      */
-    public double calcular (double x){
-    	
+public double calcular (double x){
+        
+        if(f.Funcion(ma) * f.Funcion(mb) > 0){
+        
+            System.out.println("No hay raices en la funcion introducida");
+        
 
-    	do {
-            c = (ma + mb)/2;
-    		if ((f.Funcion(ma)*f.Funcion(c)) < 0) {
-    			mb = c;	
-            System.out.println("a");
-    		}else  {
-    			ma = c;
-            System.out.println("b");
-            }
-    	} while(Math.abs(ma-mb) > x && f.Funcion(c) !=0);
-    	
-        return c;
+        }else {
+            
+              do {
+                    c = (ma + mb)/2;
+                    if ((f.Funcion(ma)*f.Funcion(c)) < 0) {
+                       mb = c; 
+                   System.out.println("a");
+                   }else  {
+                        ma = c;
+                    System.out.println("b");
+                    }
+              } while(Math.abs(ma-mb) > x && f.Funcion(c) !=0);
+        
+        
+        } return c;
     }
     
 }
